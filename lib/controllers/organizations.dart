@@ -11,6 +11,10 @@ class OrganizationsController extends ResourceController {
 
   @Operation.get()
   Future<Response> getAllOrganizations({@Bind.query('name') String organizationNameArg}) async {
+
+    if(organizationNameArg != null){
+      print('not null');
+    }
     return Response.ok(_organizations);
   }
 
