@@ -1,4 +1,7 @@
-import 'controllers/heroes_controller.dart';
+
+import 'package:first_api/controllers/organizations.dart';
+import 'package:first_api/controllers/organizations/heroes.dart';
+
 import 'first_api.dart';
 
 /// This type initializes an application.
@@ -43,6 +46,10 @@ class FirstApiChannel extends ApplicationChannel {
         .linkFunction((request) async {
           return Response.ok({"key": "value"});
     });
+
+    router
+    .route('/organizations/[:id]')
+    .link(() => OrganizationsController());
 
     router
         .route('/heroes/[:id]')
