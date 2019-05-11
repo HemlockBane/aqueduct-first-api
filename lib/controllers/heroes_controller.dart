@@ -58,9 +58,11 @@ class HeroesController extends ResourceController {
 
   @Operation.post()
   Future<Response> createHero() async{
-    final Map<String, dynamic> body = await request.body.decode();
+    final hero = Hero()
+      ..read( await request.body.decode(), ignore: ['id']);
+
     final query = Query<Hero>(context)
-      ..values.name = body['name'] as String;
+      ..values = hero;
 
     final insertedHero = await query.insert();
 
