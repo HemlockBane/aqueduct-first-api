@@ -57,9 +57,9 @@ class HeroesController extends ResourceController {
   }
 
   @Operation.post()
-  Future<Response> createHero() async{
-    final hero = Hero()
-      ..read( await request.body.decode(), ignore: ['id']);
+  Future<Response> postHero(@Bind.body(ignore: ['id']) Hero hero) async{
+//    final hero = Hero()
+//      ..read( await request.body.decode(), ignore: ['id']);
 
     final query = Query<Hero>(context)
       ..values = hero;
@@ -70,6 +70,4 @@ class HeroesController extends ResourceController {
 
 
   }
-
-
 }
