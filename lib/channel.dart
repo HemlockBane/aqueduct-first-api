@@ -1,4 +1,3 @@
-
 import 'package:first_api/controllers/organizations.dart';
 import 'package:first_api/controllers/organizations/heroes.dart';
 import 'package:first_api/controllers/organizations/buildings.dart';
@@ -49,15 +48,15 @@ class FirstApiChannel extends ApplicationChannel {
     });
 
     router
-    .route('/organizations/[:id]')
-    .link(() => OrganizationsController());
+        .route('/organizations/[:id]')
+        .link(() => OrganizationsController());
 
     router
-        .route('/buildings/[:id]')
+        .route('/organizations/:id/buildings/[:id]')
         .link(() => BuildingsController());
 
     router
-        .route('/heroes/[:id]')
+        .route('/organizations/:id/heroes/[:id]')
         .link(() => HeroesController(context));
 
     return router;

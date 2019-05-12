@@ -4,9 +4,9 @@ import 'package:aqueduct/aqueduct.dart';
 
 class BuildingsController extends ResourceController {
   final _buildings = [
-    {'id': 1, 'name': 'S.H.I.E.L.D'},
-    {'id': 2, 'name': 'Avengers'},
-    {'id': 3, 'name': 'Hydra'},
+    {'id': 1, 'name': 'S.H.I.E.L.D HQ'},
+    {'id': 2, 'name': 'Avengers Tower'},
+    {'id': 3, 'name': 'Hydra HQ'},
   ];
 
   @Operation.get()
